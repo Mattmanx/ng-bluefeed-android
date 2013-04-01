@@ -121,6 +121,7 @@ angular.module('blueFeed.controllers', [])
 				$scope.errors.push("An error occurred while taking your profile image.");
 			}),
 			{quality: 50, destinationType: Camera.DestinationType.DATA_URL}
+	
 	};
 }])
 

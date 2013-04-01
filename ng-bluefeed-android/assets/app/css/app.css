@@ -117,6 +117,29 @@ body.ng-bluefeed {
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
 }
 
+.ng-bluefeed .input-div {
+	display: table;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.ng-bluefeed .input-elem {
+	display: table-cell;
+	width: 100%;
+	border-left-style: none;
+}
+
+.ng-bluefeed #formbox {
+	width: 90%; 
+}
+
+.ng-bluefeed .text-center {
+	text-align: center;
+}
+
+="width: 90%; text-align=center;"
+
 #postContents {
 	min-height: 100px;
 }
