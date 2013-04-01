@@ -1,0 +1,62 @@
+<div id="feedNav" class="navbar navbar-inverse navbar-fixed-top" style="position: fixed">
+	<div class="navbar-inner blue-gradient-bg">
+		<div class="container">
+			<ul class="nav">
+				<li class="dropdown">
+					<a id="navTitle" class="brand dropdown-toggle" data-toggle="dropdown">
+						<strong>B</strong>F
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a ng-tap="$navigate.go('/ng_post')" ng-click="$navigate.go('/ng_post')">New Post</a>
+						</li>
+						<li>
+							<a ng-tap="$navigate.go('/ng_user')" ng-click="$navigate.go('/ng_user')">View Profile</a>
+						</li>
+						<li>
+							<a ng-tap="logout()" ng-click="logout()">Logout</a>
+						</li>
+					</ul>
+				</li>
+				<li class="divider-vertical"></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="center">
+	<div id="feedContainer">
+		<div class="alert alert-error" ng-repeat="error in errors">
+			<strong>Error:</strong>{{error}}
+		</div>
+		<ul class="media-list" id="posts">
+			<li class="media post" ng-repeat="post in posts">
+				<a class="pull-left" href="#">
+					<img class="media-object thumb64" src="{{baseUrl}}{{post.postUser.imageUrl}}"/>
+				</a>
+				<div class="media-body">
+					<h4 class="media-heading">{{post.postUser.username}}</h4>
+					{{post.postText}}
+					<div class="media comments" ng-repeat="comment in post.comments">
+						<a class="pull-left" href="#">
+							<img class="media-object thumb32" src="{{baseUrl}}{{comment.commentUser.imageUrl}}"/>
+						</a>
+						<div class="media-body">
+							<h5 class="media-heading">{{comment.commentUser.username}}</h5>
+							{{comment.commentText}}
+						</div>
+					</div>
+					<div id="commentForm" class="media comments">
+						<div class="commentText"><input type="text" placeholder="comment" ng-model="post.newCommentText" /></div>
+						<div class="commentButton"><button id="commentSubmit" class="btn" type="button" ng-click="addComment(post)">Comment</button></div>
+						<div class="alert alert-error" ng-repeat="error in post.errors">
+							<strong>Error:</strong>{{error}}
+						</div>
+					</div>
+					<h5><small>Created: {{post.createdDate}}</small></h5>
+					<h5><small>Updated: {{post.lastUpdatedDate}}</small></h5>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

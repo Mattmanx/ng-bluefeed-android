@@ -1,0 +1,38 @@
+<div id="feedNav" class="navbar navbar-inverse navbar-fixed-top" style="position: fixed">
+	<div class="navbar-inner blue-gradient-bg">
+		<div class="container">
+			<ul class="nav">
+				<li class="dropdown">
+					<a id="navTitle" href="#" class="brand dropdown-toggle" data-toggle="dropdown">
+						<strong>B</strong>F
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a ng-tap="$navigate.go('/ng_feeds')" ng-click="$navigate.go('/ng_feeds')">View Feed</a>
+						</li>
+						<li>
+							<a ng-tap="$navigate.go('/ng_user')" ng-click="$navigate.go('/ng_user')">View Profile</a>
+						</li>
+						<li>
+							<a ng-tap="logout()" ng-click="logout()">Logout</a>
+						</li>
+					</ul>
+				</li>
+				<li class="divider-vertical"></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="center">
+	<div id="postContainer">
+		<div class="alert alert-error" ng-repeat="error in errors">
+			<strong>Error:</strong>{{error}}
+		</div>
+		<h3>Create a Post</h3>
+		<div id="postForm">
+			<textarea id="postContents" ng-model="postContents" placeholder="What's on your mind?"></textarea>
+			<button id="postSubmit" class="btn btn-large btn-primary btn-block" type="button" ng-click="postTopic()" ng-tap="postTopic()">Post</button>
+		</div>
+	</div>
+</div>

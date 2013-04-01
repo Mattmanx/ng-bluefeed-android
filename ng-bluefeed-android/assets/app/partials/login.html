@@ -1,0 +1,23 @@
+<!-- <div class="fill blue-gradient-bg center">  -->
+<div id="loginContainer" class="row-fluid blue-gradient-bg max-height">
+	<div class="offset4 span4 max-height">
+		<div class="center max-height">
+			<h1>Bluefeed</h1>
+			<div class="alert alert-error" ng-repeat="error in errors">
+				<strong>Error:</strong>{{error}}
+			</div>
+			<div class="alert alert-info" ng-repeat="info in infos">
+				<strong>Info:</strong>{{info}}
+			</div>
+			<form> 
+				<fieldset>
+					<input type="text" ng-model="user" id="user" placeholder="Username" />
+				</fieldset>
+				<fieldset>
+					<input type="password" ng-model="pass" id="password" placeholder="Password"/>
+				</fieldset>
+				<button id="loginSubmit" class="btn btn-large btn-primary btn-block" type="button" ng-click="login()" ng-tap="login()">{{buttonText}}</button>
+			</form>
+		</div>
+	</div>
+</div>

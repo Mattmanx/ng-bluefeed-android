@@ -1,0 +1,145 @@
+/* app css stylesheet - namespace with app name */
+
+body.ng-bluefeed {
+	background-color: #F0F0F0;
+}
+
+.ng-bluefeed .blue-gradient-bg {
+	/* light color: 6699FF */
+	/* dark color: 293D66 */
+	background-color: #293D66;
+	background-image: -webkit-linear-gradient(top, #293D66, #6699FF);
+}
+
+.ng-bluefeed #commentForm {
+	display: flexbox;
+	display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -webkit-flexbox;
+	display: -ms-flexbox;
+	margin-top: 20px;
+	width: 100%;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: distribute;
+	-ms-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+
+}
+
+@media (max-width: 360px) {
+	.ng-bluefeed #commentForm {
+		-webkit-box-orient: vertical;
+		flex-direction: column;
+		-webkit-flex-direction: column;
+		flex-flow: column;
+		-webkit-flex-flow: column;
+	}
+}
+
+.ng-bluefeed .commentText {
+	-webkit-box-flex: 2;
+	-webkit-flex: 2;
+	-ms-flex: 2;
+}
+
+.ng-bluefeed .commentButton {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	padding-right: 10px; 
+}
+
+.ng-bluefeed .commentText > * {
+	width: 90%;
+}
+
+.ng-bluefeed .commentButton > * {
+	width: 90%;
+}
+
+.ng-bluefeed .center {
+	display: flexbox;
+	display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -webkit-flexbox;
+	display: -ms-flexbox;
+	-webkit-box-orient: vertical;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-flow: column;
+	-webkit-flex-flow: column;
+	
+	align-items: center;
+	-webkit-align-items: center;
+	
+	justify-content: center;
+	-webkit-justify-content: center;
+	-webkit-align-content: center;
+	
+	/* text-align: center; */
+	width: 100%;
+}
+
+.ng-bluefeed .max-height {
+	height: 100%;
+}
+
+.ng-bluefeed .thumb64 {
+	width: 64px;
+}
+
+.ng-bluefeed .thumb32 {
+	width: 32px;
+}
+
+.ng-bluefeed #feedContainer, .ng-bluefeed #postContainer, .ng-bluefeed #userContainer {
+	padding: 10px 10px 10px 10px;	
+	max-width: 600px;
+}
+
+.ng-bluefeed .comments {
+	padding-left: 20px;	/* false indent */
+}
+
+.ng-bluefeed .post {
+  color:#000;
+  background:#B8CFE6;
+  display:block;
+  padding:1em;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
+#postContents {
+	min-height: 100px;
+}
+
+@media (min-width: 980px) {
+	.nav-bar-body {
+		position: relative;
+		margin-top: 40px;
+	}
+}
+
+/* Bootstrap's responsive mode. */
+@media (max-width: 979px) {
+	.nav-bar-body {
+		position: relative;
+		margin-top: 60px;
+	}
+	/* Purely to fight against Bootstrap's resposive mode on login page. Ugly. 
+	 * Because we can't put a background on the body, as we don't want to impact 
+	 * other partials, need inner div to always stretch to edge of screen. */  
+	.ng-bluefeed .margin-fix {
+		margin-left: -20px;
+	}
+}
+
+
